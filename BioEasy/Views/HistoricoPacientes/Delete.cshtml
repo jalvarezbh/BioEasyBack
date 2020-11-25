@@ -1,0 +1,261 @@
+﻿@model BioEasy.Data.Entities.HistoricoPaciente
+
+@{
+    ViewData["Title"] = "Exckuir Análise de Bioimpendancia";
+}
+
+<h1>Excluir Análise de Bioimpendancia</h1>
+
+<h3>Você tem certeza de que quer excluir a Análise de Bioimpendancia?</h3>
+<div>
+    <h4>Paciente: @Model.Paciente.Nome</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AguaCorporal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AguaCorporal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GorduraVisceral)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GorduraVisceral)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MassaOssea)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MassaOssea)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdadeMetabolica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdadeMetabolica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IngestaoCalorica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IngestaoCalorica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaxaMetabolicaBasal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaxaMetabolicaBasal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MassaCorporal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MassaCorporal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QualidadeMuscularTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QualidadeMuscularTotal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaDireitaNivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaDireitaNivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaDireitaMassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaDireitaMassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaDireitaMassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaDireitaMassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaDireitaMassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaDireitaMassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaDireitaQualidadeMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaDireitaQualidadeMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaEsquerdaNivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaEsquerdaNivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaEsquerdaMassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaEsquerdaMassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaEsquerdaMassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaEsquerdaMassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaEsquerdaMassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaEsquerdaMassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PernaEsquerdaQualidadeMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PernaEsquerdaQualidadeMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoDireitoNivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoDireitoNivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoDireitoMassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoDireitoMassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoDireitoMassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoDireitoMassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoDireitoMassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoDireitoMassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoDireitoQualidadeMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoDireitoQualidadeMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoEsquerdoNivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoEsquerdoNivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoEsquerdoMassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoEsquerdoMassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoEsquerdoMassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoEsquerdoMassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoEsquerdoMassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoEsquerdoMassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BracoEsquerdoQualidadeMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BracoEsquerdoQualidadeMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TroncoNivelGordura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TroncoNivelGordura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TroncoMassaAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TroncoMassaAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TroncoMassaNaoAdiposa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TroncoMassaNaoAdiposa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TroncoMassaMuscular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TroncoMassaMuscular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataRegistroBalanca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataRegistroBalanca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAtualizacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataAtualizacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a class="btn btn-light" asp-action="Index" asp-route-id="@Model.PacienteId">Voltar</a>
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+    </form>
+</div>

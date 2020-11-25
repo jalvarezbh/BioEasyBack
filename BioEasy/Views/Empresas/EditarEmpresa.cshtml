@@ -1,0 +1,43 @@
+﻿@model BioEasy.Data.Entities.Empresa
+
+@{
+    ViewData["Title"] = "Editar Empresa";
+}
+
+<h1>Editar Empresa</h1>
+
+<h4>Empresa</h4>
+<hr />
+<div class="row text-center">
+    <div class="col-md-12">
+        <form asp-action="EditarEmpresa" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="Endereco" class="control-label"></label>
+                    <input asp-for="Endereco" class="form-control" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="Instagram" class="control-label"></label>
+                    <input asp-for="Instagram" class="form-control" />
+                    <span asp-validation-for="Instagram" class="text-danger"></span>
+                </div>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <a class="btn btn-light" asp-action="Index">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

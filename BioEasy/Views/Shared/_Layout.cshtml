@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BioEasy</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h3>BioEasy</h3>
+                <img id="logo" src="~/img/logo_small.PNG" width="100" height="100" />
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>BioEasy</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Home</a>
+                    <ul class="list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a asp-area="" asp-controller="Pacientes" asp-action="Index"><i class="fa fa-male" aria-hidden="true"></i> Pacientes</a>
+                        </li>
+                        @{
+                            if (User.IsInRole("Administrador"))
+                            {
+                            <li>
+                                <a asp-area="" asp-controller="Empresas" asp-action="Index"><i class="fa fa-building" aria-hidden="true"></i> Empresas</a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Usuarios" asp-action="Index"><i class="fa fa-user" aria-hidden="true"></i> Usuários</a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Configuracoes" asp-action="Index"><i class="fa fa-tools" aria-hidden="true"></i> Configurações</a>
+                            </li>
+                            }
+                        }
+                        @{
+                            else
+                            {
+                            <li>
+                                <a asp-area="" asp-controller="Empresas" asp-action="EditarEmpresa"><i class="fa fa-tools" aria-hidden="true"></i> Cadastro</a>
+                            </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menu">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <span id="dataLoginExpira" class="text-white"></span>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="SignOut"><i class="fa fa-user-circle" aria-hidden="true"></i> Sair</a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <main role="main" class="px-md-4 border">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/fontawesome/js/all.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+
+            $.ajax({
+                url: "@Url.Action("GetLogo", "Empresas")",
+                type: "GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                mimeType: "text/plain; charset=x-user-defined"
+            }).done(function (data, textStatus, jqXHR) {
+                $("#logo").attr('src', 'data:image/jpeg;base64,' + data);
+            });
+
+            $.ajax({
+                url: "@Url.Action("GetLoginExpira", "Usuarios")",
+                type: "GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                mimeType: "text/plain; charset=x-user-defined"
+            }).done(function (data, textStatus, jqXHR) {
+                $("#dataLoginExpira").html(data);
+            });
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

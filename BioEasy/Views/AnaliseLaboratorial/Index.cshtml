@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BioEasy.Data.Entities.AnaliseLaboratorial>
+
+@{
+    ViewData["Title"] = "Análise Laboratorial";
+}
+
+<h1>Análise Laboratorial</h1>
+<h2>Paciente: @ViewBag.Paciente</h2>
+
+<p>
+    <a class="btn btn-light" asp-action="Index" asp-controller="Pacientes">Voltar</a>
+    <a class="btn btn-primary btn-md" asp-action="Create" asp-route-id="@ViewBag.PacienteId">Criar nova Análise</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Colesterol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LDL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HDL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Triglicerideos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcucarNoSangue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UltimaRefeicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Colesterol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LDL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HDL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Triglicerideos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcucarNoSangue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UltimaRefeicao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataLancamento)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" title="Editar" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary btn-sm" title="Detalhes" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-table" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary btn-sm" title="Excluir" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

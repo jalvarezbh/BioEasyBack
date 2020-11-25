@@ -1,0 +1,44 @@
+﻿@model BioEasy.Data.Entities.Configuracao
+
+@{
+    ViewData["Title"] = "Editar Configurações";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar Configurações</h1>
+
+<h4>Configuracao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Porta" class="control-label"></label>
+                <input asp-for="Porta" class="form-control" />
+                <span asp-validation-for="Porta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SMTP" class="control-label"></label>
+                <input asp-for="SMTP" class="form-control" />
+                <span asp-validation-for="SMTP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <a class="btn btn-light" asp-action="Index">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

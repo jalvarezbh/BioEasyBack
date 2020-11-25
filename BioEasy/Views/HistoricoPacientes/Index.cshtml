@@ -1,0 +1,68 @@
+﻿@model IEnumerable<BioEasy.Data.Entities.HistoricoPaciente>
+
+@{
+    ViewData["Title"] = "Análise de Bioimpendancia";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Mensagem))
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        @ViewBag.Mensagem
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<h1>Análise de Bioimpendancia</h1>
+<h2>Paciente: @ViewBag.Paciente</h2>
+
+<p>
+    <a class="btn btn-light" asp-action="Index" asp-controller="Pacientes">Voltar</a>
+    <a class="btn btn-primary btn-md" asp-action="Create" asp-route-id="@ViewBag.PacienteId">Criar Análise Manualmente</a>
+</p>
+
+<form class="form-inline" asp-action="Importar" enctype="multipart/form-data">
+    <input type="file" id="File" name="File" class="form-control">
+    <input id="PacienteId" name="PacienteId" type="hidden" value="@ViewBag.PacienteId">
+    <input type="submit" value="Importar" class="btn btn-success btn-md">
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRegistroBalanca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAtualizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataRegistroBalanca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataAtualizacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paciente.Nome)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" title="Editar" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary btn-sm" title="Detalhes" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-table" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary btn-sm" title="Excluir" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

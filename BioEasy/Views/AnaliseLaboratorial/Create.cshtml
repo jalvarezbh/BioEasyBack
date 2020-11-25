@@ -1,0 +1,63 @@
+﻿@model BioEasy.Data.Entities.AnaliseLaboratorial
+
+@{
+    ViewData["Title"] = "Nova Análise Laboratorial";
+}
+
+<h1>Nova Análise Laboratorial</h1>
+
+<h4>Paciente: @ViewBag.Paciente</h4>
+<hr />
+<div class="row text-center">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="Colesterol" class="control-label"></label>
+                    <input asp-for="Colesterol" class="form-control" />
+                    <span asp-validation-for="Colesterol" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="LDL" class="control-label"></label>
+                    <input asp-for="LDL" class="form-control" />
+                    <span asp-validation-for="LDL" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="HDL" class="control-label"></label>
+                    <input asp-for="HDL" class="form-control" />
+                    <span asp-validation-for="HDL" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="Triglicerideos" class="control-label"></label>
+                    <input asp-for="Triglicerideos" class="form-control" />
+                    <span asp-validation-for="Triglicerideos" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="AcucarNoSangue" class="control-label"></label>
+                    <input asp-for="AcucarNoSangue" class="form-control" />
+                    <span asp-validation-for="AcucarNoSangue" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="UltimaRefeicao" class="control-label"></label>
+                    <input asp-for="UltimaRefeicao" class="form-control" />
+                    <span asp-validation-for="UltimaRefeicao" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="DataLancamento" class="control-label"></label>
+                    <input asp-for="DataLancamento" class="form-control" />
+                    <span asp-validation-for="DataLancamento" class="text-danger"></span>
+                </div>
+            </div>
+            <input id="PacienteId" name="PacienteId" type="hidden" value="@ViewBag.PacienteId">
+            <div class="form-group">
+                <a class="btn btn-light" asp-action="Index" asp-route-id="@ViewBag.PacienteId">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

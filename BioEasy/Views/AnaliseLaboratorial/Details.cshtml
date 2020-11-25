@@ -1,0 +1,66 @@
+﻿@model BioEasy.Data.Entities.AnaliseLaboratorial
+
+@{
+    ViewData["Title"] = "Detalhes da Análise Laboratorial";
+}
+
+<h1>Detalhes da Análise Laboratorial</h1>
+
+<div>
+    <h4>Paciente: @Model.Paciente.Nome</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Colesterol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Colesterol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LDL)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LDL)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HDL)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HDL)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triglicerideos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triglicerideos)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AcucarNoSangue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AcucarNoSangue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UltimaRefeicao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UltimaRefeicao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataLancamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataLancamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-light" asp-action="Index" asp-route-id="@Model.PacienteId">Voltar</a>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Editar</a>
+</div>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BioEasy.Data.Entities.Empresa>
+
+@{
+    ViewData["Title"] = "Empresas";
+}
+
+<h1>Empresas</h1>
+
+<p>
+    <a class="btn btn-primary btn-md" asp-action="Create">Criar nova Empresa</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Busca por nome: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+            <a class="btn btn-default" asp-action="Index">Limpar Filtros</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Logo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CRN_CRM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF_CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instagram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img height="30" width="30" src="data:image/png;base64,@Convert.ToBase64String(item.Logo)">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRN_CRM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF_CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instagram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                <a class="btn btn-primary btn-sm" title="Editar" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                <a class="btn btn-primary btn-sm" title="Detalhes" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-table" aria-hidden="true"></i></a>
+                <a class="btn btn-primary btn-sm" title="Excluir" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

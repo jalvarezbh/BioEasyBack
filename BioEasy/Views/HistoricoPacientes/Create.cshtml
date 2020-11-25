@@ -1,0 +1,220 @@
+﻿@model BioEasy.Data.Entities.HistoricoPaciente
+
+@{
+    ViewData["Title"] = "Nova Análise de Bioimpendancia";
+}
+
+<h1>Nova Análise de Bioimpendancia</h1>
+
+<h4>Paciente: @ViewBag.Paciente</h4>
+<hr />
+<div class="row text-center">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="DataRegistroBalanca" class="control-label"></label>
+                    <input asp-for="DataRegistroBalanca" class="form-control" />
+                    <span asp-validation-for="DataRegistroBalanca" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="Peso" class="control-label"></label>
+                    <input asp-for="Peso" class="form-control" />
+                    <span asp-validation-for="Peso" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="NivelGordura" class="control-label"></label>
+                    <input asp-for="NivelGordura" class="form-control" />
+                    <span asp-validation-for="NivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="AguaCorporal" class="control-label"></label>
+                    <input asp-for="AguaCorporal" class="form-control" />
+                    <span asp-validation-for="AguaCorporal" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="GorduraVisceral" class="control-label"></label>
+                    <input asp-for="GorduraVisceral" class="form-control" />
+                    <span asp-validation-for="GorduraVisceral" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="MassaMuscular" class="control-label"></label>
+                    <input asp-for="MassaMuscular" class="form-control" />
+                    <span asp-validation-for="MassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="MassaOssea" class="control-label"></label>
+                    <input asp-for="MassaOssea" class="form-control" />
+                    <span asp-validation-for="MassaOssea" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="IdadeMetabolica" class="control-label"></label>
+                    <input asp-for="IdadeMetabolica" class="form-control" />
+                    <span asp-validation-for="IdadeMetabolica" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="MassaAdiposa" class="control-label"></label>
+                    <input asp-for="MassaAdiposa" class="form-control" />
+                    <span asp-validation-for="MassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="MassaNaoAdiposa" class="control-label"></label>
+                    <input asp-for="MassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="MassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="IngestaoCalorica" class="control-label"></label>
+                    <input asp-for="IngestaoCalorica" class="form-control" />
+                    <span asp-validation-for="IngestaoCalorica" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="TaxaMetabolicaBasal" class="control-label"></label>
+                    <input asp-for="TaxaMetabolicaBasal" class="form-control" />
+                    <span asp-validation-for="TaxaMetabolicaBasal" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <label asp-for="MassaCorporal" class="control-label"></label>
+                    <input asp-for="MassaCorporal" class="form-control" />
+                    <span asp-validation-for="MassaCorporal" class="text-danger"></span>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label asp-for="QualidadeMuscularTotal" class="control-label"></label>
+                    <input asp-for="QualidadeMuscularTotal" class="form-control" />
+                    <span asp-validation-for="QualidadeMuscularTotal" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"></div>
+                <div class="col-md-2 form-group"><label class="control-label">Nível de Gordura(%)</label></div>
+                <div class="col-md-2 form-group"><label class="control-label">Massa Adiposa(KG)</label></div>
+                <div class="col-md-2 form-group"><label class="control-label">Massa não Adiposa/MNA(KG)</label></div>
+                <div class="col-md-2 form-group"><label class="control-label">Massa Muscular/PMN(KG)</label></div>
+                <div class="col-md-2 form-group"><label class="control-label">Qualidade Muscular</label></div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"><label class="control-label">Perna Direita</label></div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaDireitaNivelGordura" class="form-control" />
+                    <span asp-validation-for="PernaDireitaNivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaDireitaMassaAdiposa" class="form-control" />
+                    <span asp-validation-for="PernaDireitaMassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaDireitaMassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="PernaDireitaMassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaDireitaMassaMuscular" class="form-control" />
+                    <span asp-validation-for="PernaDireitaMassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaDireitaQualidadeMuscular" class="form-control" />
+                    <span asp-validation-for="PernaDireitaQualidadeMuscular" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"><label class="control-label">Perna Esquerda</label></div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaEsquerdaNivelGordura" class="form-control" />
+                    <span asp-validation-for="PernaEsquerdaNivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaEsquerdaMassaAdiposa" class="form-control" />
+                    <span asp-validation-for="PernaEsquerdaMassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaEsquerdaMassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="PernaEsquerdaMassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 orm-group">
+                    <input asp-for="PernaEsquerdaMassaMuscular" class="form-control" />
+                    <span asp-validation-for="PernaEsquerdaMassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="PernaEsquerdaQualidadeMuscular" class="form-control" />
+                    <span asp-validation-for="PernaEsquerdaQualidadeMuscular" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"><label class="control-label">Braço Direito</label></div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoDireitoNivelGordura" class="form-control" />
+                    <span asp-validation-for="BracoDireitoNivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoDireitoMassaAdiposa" class="form-control" />
+                    <span asp-validation-for="BracoDireitoMassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoDireitoMassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="BracoDireitoMassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoDireitoMassaMuscular" class="form-control" />
+                    <span asp-validation-for="BracoDireitoMassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoDireitoQualidadeMuscular" class="form-control" />
+                    <span asp-validation-for="BracoDireitoQualidadeMuscular" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"><label class="control-label">Braço Esquerdo</label></div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoEsquerdoNivelGordura" class="form-control" />
+                    <span asp-validation-for="BracoEsquerdoNivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoEsquerdoMassaAdiposa" class="form-control" />
+                    <span asp-validation-for="BracoEsquerdoMassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoEsquerdoMassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="BracoEsquerdoMassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoEsquerdoMassaMuscular" class="form-control" />
+                    <span asp-validation-for="BracoEsquerdoMassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="BracoEsquerdoQualidadeMuscular" class="form-control" />
+                    <span asp-validation-for="BracoEsquerdoQualidadeMuscular" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group"><label class="control-label">Tronco</label></div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="TroncoNivelGordura" class="form-control" />
+                    <span asp-validation-for="TroncoNivelGordura" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="TroncoMassaAdiposa" class="form-control" />
+                    <span asp-validation-for="TroncoMassaAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="TroncoMassaNaoAdiposa" class="form-control" />
+                    <span asp-validation-for="TroncoMassaNaoAdiposa" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <input asp-for="TroncoMassaMuscular" class="form-control" />
+                    <span asp-validation-for="TroncoMassaMuscular" class="text-danger"></span>
+                </div>
+                <div class="col-md-2 form-group"></div>
+            </div>
+            <input id="PacienteId" name="PacienteId" type="hidden" value="@ViewBag.PacienteId">
+            <div class="form-group">
+                <a class="btn btn-light" asp-action="Index" asp-route-id="@ViewBag.PacienteId">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
